@@ -24,6 +24,14 @@ class CustomWorld {
     return this.driver.get(BASE_URL);
   }
 
+goToNavbar() {
+
+    return this.driver.get(BASE_URL);
+  
+
+    this.driver.findElement(By.id('primary-nav'));
+  }
+
   start() {
     this.driver = buildDriver();
   }
