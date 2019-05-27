@@ -2,15 +2,61 @@ const { Given, Then } = require('cucumber');
 const { By } = require('selenium-webdriver');
 const World = require('../support/world');
 
+
+//creating account
+
 Given(/^I go to the jobs page$/, () => World.goToJobsPage());
 
 Then(/^I should see the navigation bar$/, async () => {
   return World.driver.findElement(By.id('primary-nav'));
 })
 
-Given(/^I go to the nav bar$/, () => World.goToNavbar());
+Given(/^i click on create account$/, () => world.clickCreateAccount()); //function clicks on create account
 
-Then(/^I should see the search fields$/, async () => {
- return World.driver.findElement(By.id('main'));
+Then(/^then i should see the create accounts page$/, async () => {
+  return World.driver.findElement(By.id('main'));
 })
-    
+
+Given(/^i click on title$/, () => World.clickTitle()); //function clicks on title in the create accounts page
+
+Then(/^i should enter my title$/, async () => {
+  return World.driver.type("Mr"); //here i use the type method to eneter "Mr as the value in the current field 
+})
+
+Given(/^i click on first name$/, () => World.clickFirstName()); //function clicks on first name field
+
+Then(/^i should write my first name$/, async () => {
+  return World.driver.type("Mohin"); //type method is used to eneter a string value "Mohin" in the current target field 
+})
+
+Given(/^i click on surname$/, () => World.clickLastName()); //function clicks on last name field
+
+Then(/^i should write my surname$/, async () => {
+  return World.driver.type("Akhtar"); //type method is used to insert the string alue "Akhtar" to the current target field
+})
+
+Given(/^i click on email address$/, () => World.clickEmailAddress()); //function clicks on email address field
+
+Then(/^i should eneter my email address$/, async () => {
+  return World.driver.type("mohinakhtar@hotmail.com"); //type method is used to enter the value "mohinakhtar@hotmail.com" to the current target field
+})
+
+Given(/^i click on password$/, () => World.clickPassword()); //function clicks on password field
+
+Then(/^then i should enter a password$/, async () => {
+  return World.driver.type("mohin123"); type function is used to eneter the value "mohin123" in to the current target field
+})
+
+Given(/^i click on re enter password$/, () => World.clickReEnterPassword()); //function clicks on re enter password field
+
+Then(/^i should enter password$/, async () => {
+  return World.driver.type("mohin123"); //type method is used to re eneter the same password in the current target fied
+})
+
+Given(/^i click on terms and conditions$/, () => World.clickTandC()); //function clciks on t&c field
+
+Then(/^i should click on agree$/, async () => {
+  return World.driver.findElement(By.id("agreeTermsAndConds")); 
+})
+
+

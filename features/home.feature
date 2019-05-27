@@ -1,25 +1,31 @@
-Feature: Jobs page
+ Feature: jobs page
 
-  Scenario: Navigation bar renders
-    Given I go to the jobs page
-    Then I should see the navigation bar
+  Scenario: navigation bar renders
+    Given: the jobs page loads
+    Then: I should see the navigation bar
 
-  Scenario: Search fields renders
-    Given I go to the nav bar
-    Then I should see the Search fields
+  Scenario: enter title
+    Given: i click on title
+    Then: I should enter my type
 
-  Scenario: Sector lists renders
-    Given I go to the search fields
-    Then I should see the Sector lists
+  Scenario: enter first name
+    Given: i click on first name
+    Then: i should enter first name
 
-  Scenario: Jobs blog renders
-    Given I go to the search fields
-    Then I should see the Jobs blog
+  Scenario: enter surname
+    Given: i click on surname
+    Then: I should enter my surname
 
-  Scenario: Featired jobs renders
-    Given I go to the jobs blogs
-    Then I should see the Featured jobs
+  Scenario: enter password
+    Given: i click on password
+    Then: i should enter a password
 
-  Scenario: Footer renders
-    Given I go to the featured jobs
-    Then I should see the Footer
+Scenario: re enter password       
+    Given: i click on re enter password
+    Then: i should enter a password
+
+  Scenario: agree to terms and consitions
+    Given: i click on terms and conditions
+    Then: i should check the box to agree 
+
+  
