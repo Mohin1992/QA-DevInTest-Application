@@ -34,32 +34,17 @@ Scenario: re enter password
 //signing in features
 
   scenario: sign in
-    Given: i click on sign in 
-    When: i click on user name
-    And: i enter my username
-    When: i click on password
-    And: i enter my password
-    Then: i click on sign in
-
-// logout features
+    Given: i click on sign in
+    Then: i should be on the sign in page 
+    
+  scenario: enter user name
+    Given: i click on user name
+    Then: i should enter my username
+    
+  scenario: enter password
+    Given: i click on password
+    Then: i should enter my password
   
-  scenario: sign out
-    Given: i'm signed in to an account
-    When: i click on sign out
-    Then: i should be able click on sign in //to indicate that i've successfully signed out
-
-// navigation bar features
-   
-   scenario: navigation bar renders
-    Given: i'm on the jobs page
-    When: i click on 
-    Then: i should be directed to the 
-    When: i click on 
-    Then: i should be directed to the
-    When: i click on 
-    Then: i should be directed to the 
-    When: i click on
-    Then: i should be directed to the 
-    When: i click on 
-    Then: i should be directed to the
-
+  scenario: check if signed in
+    Given: i click on sign in
+    Then: i should click on sign out

@@ -60,3 +60,44 @@ Then(/^i should click on agree$/, async () => {
 })
 
 
+// signing in
+
+
+Given(/^I go to the jobs page$/, () => World.goToJobsPage());
+
+Then(/^I should see the navigation bar$/, async () => {
+  return World.driver.findElement(By.id('primary-nav'));
+})
+
+Given(/^i click on sign on signin $/, () => world.clickSignIn());
+
+Then(/^then i should be on the signin page$/, async () => {
+  return World.driver.findElement(By.id('main'));
+})
+
+Given(/^i click on username $/, () => world.clickUsername());
+
+Then(/^then i should enter my username$/, async () => {
+  // tryinng to find a way to pass username in this step
+  // without having to apply it to world.clickUsername().
+})
+
+Given(/^i click on password $/, () => world.clickPassword());
+
+Then(/^then i should enter my password$/, async () => {
+  // tryinng to find a way to pass the password in this step
+  // without having to apply it to world.clickPassword() function.
+})
+
+Given(/^i click on signin $/, () => world.clickSignIn());
+
+Then(/^then i should click on signout $/, async () => {
+   return World.driver.findElement(By.linkText('Sign Out'));
+//this should indicate that you managed to sign in to your account 
+//successfully.
+})
+
+
+
+
+

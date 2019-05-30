@@ -4,7 +4,8 @@ require('chromedriver');
 
 const DEFAULT_TIMEOUT = 60000;
 const BASE_URL = 'https://jobs.economist.com';
-
+const emailAddress = ("mohinakhtar@hotmail.com");
+const myPassword = ("mohin123");
 function buildDriver() {
   const chromeCapabilities = Capabilities.chrome();
   const chromeOptions = {
@@ -33,45 +34,64 @@ class CustomWorld {
     this.driver = buildDriver();
   }
 
+clickSignIn() {
+ return a = this.driver.findElement(By.linkText("Sign in"));
+ this.driver.click(a);
+}
 
-clickCreateAccount() {//
- return driver.findElement(By.linkText("Create account"));
- driver.click(createAccount);
+clickUsername() {
+ return a = this.driver.findElement(By.id("signinemail"));
+ this.driver.click(a).value=(emailAddress);
+}
+
+clickPassword() {
+ return a = this.driver.findElement(By.id("signinpassword"));
+ this.driver.click(a).value=(myPassword);
+}
+
+clickSignIn() {
+ return a = this.driver.findElement(By.linkText("Sign In"));
+ this.driver.click(a);
+}
+
+clickCreateAccount() {
+ return a = this.driver.findElement(By.linkText("Create account"));
+ this.driver.click(createAccount);
 }
 
 clcikTitle(){
- return a = driver.findElement(By.id("title"));
- driver.click(a);
+ return a = this.driver.findElement(By.id("title"));
+ this.driver.click(a);
 }
 
 clickFirstName(){
- return a = driver.findElement(By.id("firstname"));
- driver.click(a);
+ return a = this.driver.findElement(By.id("firstname"));
+ this.driver.click(a);
 }
 
 clickLastName(){
-return a = driver.findElement(By.id("lastname"));
-driver.click(a);
+return a = this.driver.findElement(By.id("lastname"));
+this.driver.click(a);
 }
 
 clickEmailAddress(){
-return a = driver.findElement(By.id("emailaddress"));
-driver.click(a);
+return a = this.driver.findElement(By.id("emailaddress"));
+this.driver.click(a);
 }
 
 clickPassword(){
- return a = driver.findElement(By.id("regpassword"));
-driver.click(a);
+ return a = this.driver.findElement(By.id("regpassword"));
+this.driver.click(a);
 }
 
 clickReEnterPassword(){
- return a = driver.findElement(By.id("confirmpassword"));
-driver.click(a);
+ return a = this.driver.findElement(By.id("confirmpassword"));
+this.driver.click(a);
 }
 
 clickTandC(){
-return a = driver.findElement(By.id("agreeTermsAndConds"));
-driver.click(a);
+return a = this.driver.findElement(By.id("agreeTermsAndConds"));
+this.driver.click(a);
 }
 
 
